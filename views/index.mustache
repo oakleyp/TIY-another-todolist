@@ -26,8 +26,9 @@
             <li>
                 <form action="/" method="post">
                     <span name="text">{{ text }}</span>
-                    <input class="mark" type="submit" value="Mark complete">
+                    <input name="markbtn" class="mark" type="submit" value="Mark complete">
                     <input type="hidden" name="todoid" value="{{ id }}">
+                    <input type="hidden" name="todotext" value="{{ text }}">
                 </form>
             </li>
             {{/todos}}
@@ -36,7 +37,12 @@
         <ul class="completeitems">
             {{#done}}
             <li>
-                <span class="done">{{ text }}</span>
+                <form action="/" method="post">
+                    <span class="done">{{ text }}</span>
+                    <input name="deletebtn" class="mark" type="submit" value="Delete item">
+                    <input type="hidden" name="todoid" value="{{ id }}">
+                    <input type="hidden" name="todotext" value="{{ text }}">
+                </form>
             </li>
             {{/done}}
         </ul>
